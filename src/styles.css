@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+:root .stylesDocumentacionTecnica{
+  --color-background:rgb(227, 231, 233);
+  --color-hover-button:rgba(10, 137, 255, 0.76);
+  --color-font-code:#ffffff;
+  --color-background6:rgb(13, 116, 212);
+  --color-background6b:rgba(10, 137, 255, 0.76);
+}
+.stylesDocumentacionTecnica *{
+  box-sizing:border-box;
+}
+.stylesDocumentacionTecnica {
+  background:var(--color-background);
+  font-family:"Nunito", "Ubuntu Mono", sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size:1.4rem;
+  margin:0 auto;
+  padding:0;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica {
+    font-size:1.2rem;
+  }
+}
+
+.stylesDocumentacionTecnica #container{
+  display:grid;
+  grid-template-columns:250px 75vw;
+  grid-template-rows:auto;
+  grid-template-areas:
+    "nav header"
+    "nav main";
+  /*just-cont centra el main*/
+  justify-content: space-evenly;
+  animation-name:container-movie;
+  animation-duration:.8s;
+  animation-iteration-count:1;
+}
+.stylesDocumentacionTecnica .container_off::before{
+  content:"";
+  position:fixed;
+  top:0;
+  width:100vw;
+  height:100vh;
+  background:black;
+  opacity:.3;
+  z-index:1;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica #container{
+    grid-template-columns:98vw;
+    grid-template-areas:
+      "parte_sup"
+      "header"
+      "main";
+    /*part_sup es espacio para que btn no tape el titulo*/
+  }
+}
+@keyframes container-movie{
+  0%{
+    margin:50px;
+  }
+}
+.stylesDocumentacionTecnica a{
+  text-decoration:none;
+  color:var(--color-lista);
+}
+.stylesDocumentacionTecnica code{
+  font-size:1.6rem;
+  font-weight:bold;
+  color:rgb(27, 140, 247);
+}
+.stylesDocumentacionTecnica code::selection,
+.stylesDocumentacionTecnica span::selection{
+  background:rgb(221, 63, 90);
+  color:white;
+  text-shadow: 1px 1px grey;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica code{
+    font-size:1.2rem;
+  }
+}
+
+.stylesDocumentacionTecnica header{
+  text-align:center;
+}
+
+.stylesDocumentacionTecnica .main-section header{
+  margin-bottom:50px;
+  padding:10px 0px 15px 0px;
+  font-size:3em;
+  background:linear-gradient(180deg,var(--color-background6),var(--color-background6),var(--color-background6b));
+  color:white;
+  box-shadow:0px 0px 4px 0px grey;
+  border-radius:20px;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica .main-section header{
+    font-size:2.3em;
+  }
+}
+
+.stylesDocumentacionTecnica .main-section h3{
+  font-size:2.5rem;               
+  color:black;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica .main-section h3{
+    font-size:1.8rem;
+  }
+}
+.stylesDocumentacionTecnica .main-section p::first-letter{ 
+  margin-left:45px;
+}
+.stylesDocumentacionTecnica .main-section li{
+  padding:10px;                
+  border-radius:2px;
+  margin-top:20px;
+}
+.stylesDocumentacionTecnica .main-section{
+  padding:20px;
+  background:transparent;
+}
+
+.stylesDocumentacionTecnica #header>h1{
+  margin:30px auto;
+  padding-bottom:20px;
+  font-size:5rem;    
+  color:var(--color-background6b);
+  border-bottom:4px solid grey;
+  animation-name:h1-movie;
+  animation-duration:2s;
+  animation-iteration-count:1;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica #header>h1{
+    font-size:3rem;
+  }
+}
+@keyframes h1-movie{
+  0%{
+    letter-spacing:1vw;
+  }
+}
+
+.stylesDocumentacionTecnica #navbar{
+  grid-area:nav;
+  position:fixed;
+  width:20vw;
+  height: 100vh;
+  border-right:4px solid grey;
+  color:black;
+  background:white;
+  overflow:auto;
+  z-index:2;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica #navbar{
+    display:none;
+    height:85vh;
+    margin:20px auto;
+    left:5vw;
+    width:90vw;
+    box-shadow:0px 0px 20px 0px black;
+  }
+}
+@media (min-width:1001px){
+  .stylesDocumentacionTecnica #navbar{display:block !important;}
+}
+.stylesDocumentacionTecnica #navbar>header{
+  margin:10px auto;
+  padding:5px 0px;
+  width:80%;
+  cursor:pointer;
+  border-radius:10px;
+  background:#94c9fa;
+}
+.stylesDocumentacionTecnica #navbar dt{
+  text-transform:uppercase;
+}
+.stylesDocumentacionTecnica #navbar ul{
+  display:flex;
+  flex-direction:column;
+  margin:10px 2px;
+  padding:0;
+  height:85vh;
+  justify-content:space-between;
+}
+.stylesDocumentacionTecnica #navbar ul li{
+  background:white;
+  list-style:none;
+  padding:8px 8px;
+  border-bottom:1px solid grey;
+}
+.stylesDocumentacionTecnica #navbar ul li:nth-child(1),
+.stylesDocumentacionTecnica #navbar ul li:nth-child(3),
+.stylesDocumentacionTecnica #navbar ul li:nth-child(5),
+.stylesDocumentacionTecnica #navbar ul li:nth-child(7){
+  background:#94c9fa3a;
+}
+.stylesDocumentacionTecnica #navbar ul li a:active{ 
+  color:white;
+}
+.stylesDocumentacionTecnica #navbar dd:hover,.stylesDocumentacionTecnica #navbar dt:hover{
+  background:var(--color-hover-button);
+  transition:all .2s ease;
+}
+.stylesDocumentacionTecnica dd,.stylesDocumentacionTecnica dt{
+  border-radius:10px;
+  padding:5px 10px;  
+  margin:0;
+}
+.stylesDocumentacionTecnica #como_usar_css dl:nth-child(1){
+  padding-bottom:20px;
+}
+
+.stylesDocumentacionTecnica .rect-codigo{
+  color:var(--color-font-code);
+  font-weight:700;
+}
+.stylesDocumentacionTecnica .pre-codigo{
+  display:flex;
+  margin:10px auto;
+  width:99%;
+  padding: 20px;
+  height: max-content;
+  background:rgb(49, 49, 49);
+  box-shadow:1px 1px 2px 1px black;
+  overflow:auto;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica .pre-codigo{
+    width:90vw;
+    margin:10px 0px; 
+  }
+}
+
+.stylesDocumentacionTecnica #parte_superior{
+  grid-area:parte_sup;
+  display:none;
+  position:relative;
+  margin:0;
+  padding:0;
+  height:30px;
+  width:100vw;
+}
+.stylesDocumentacionTecnica #btn_indice{
+  display:none;
+  position:fixed;
+  right:5px;
+  top:5px;
+  padding:6px 7px;
+  border-radius:10px;
+  background:var(--color-background6);
+  color:white;
+  cursor:pointer;
+  box-shadow:0px 0px 5px 0px var(--color-background);
+  z-index:3;
+}
+@media (max-width:1000px){
+  .stylesDocumentacionTecnica #parte_superior{
+    display:block;
+  }
+  .stylesDocumentacionTecnica #btn_indice{
+    display:block;
+    transition:all .2s ease;
+  }
+}
+
+.stylesDocumentacionTecnica #header{grid-area:header;}
+.stylesDocumentacionTecnica #main-doc{grid-area:main;}
+
+.stylesDocumentacionTecnica .tag-html{color:#de2631;}
+.stylesDocumentacionTecnica .atrib-html{color:#6a9027;}
+.stylesDocumentacionTecnica .tag{color:#f22656;}
+.stylesDocumentacionTecnica .atrib{color:#66d9ef;}
+.stylesDocumentacionTecnica .val{color:#ffffff;}
+.stylesDocumentacionTecnica .element-root{color:#f22656;}
+.stylesDocumentacionTecnica .element-class{color:#6a9027;}
+.stylesDocumentacionTecnica .variab{color:#ffffff;}
+
